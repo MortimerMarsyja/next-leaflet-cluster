@@ -14,14 +14,13 @@ const { MapContainer, MapConsumer } = ReactLeaflet;
 const Map = ({ children, className, ...rest }) => {
   let mapClassName = styles.map;
 
-  if ( className ) {
+  if (className) {
     mapClassName = `${mapClassName} ${className}`;
   }
 
   useEffect(() => {
     (async function init() {
       delete L.Icon.Default.prototype._getIconUrl;
-
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: iconRetinaUrl.src,
         iconUrl: iconUrl.src,
