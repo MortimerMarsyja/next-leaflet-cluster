@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import L from 'leaflet';
 import * as ReactLeaflet from 'react-leaflet';
-import * as ReactCluster from 'react-leaflet-markercluster';
+import MarkerClusterGroup from 'react-leaflet-markercluster';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet.css'; // sass
 import 'react-leaflet-markercluster/dist/styles.min.css';
@@ -37,7 +37,7 @@ const Map = ({ children, className, ...rest }) => {
   return (
     <MapContainer className={mapClassName} {...rest}>
       <MapConsumer>
-        {(map) => children(ReactLeaflet, ReactCluster, map)}
+        {(map) => children(ReactLeaflet, MarkerClusterGroup, map)}
       </MapConsumer>
     </MapContainer>
   )
